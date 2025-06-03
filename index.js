@@ -23,11 +23,16 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/outflo
 
 //middleware to enable CORS
 // Allow only your Vercel frontend URL
+const allowedOrigins = [
+  'https://outflo-assigment.vercel.app/', // Vercel frontend
+  'http://localhost:5173', // local dev
+];
+
 app.use(cors({
-    origin: 'https://outflo-assigment.vercel.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}))
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
 
 
 //middleware to parse JSON requests

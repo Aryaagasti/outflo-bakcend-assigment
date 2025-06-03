@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { scrapeLinkedInProfiles } = require('../services/linkedInScraper');
+const { scrapeLinkedInProfiles } = require('../utils/linkedInScraper');
 
 // Route to trigger LinkedIn profile scraping
 router.post('/scrape', async (req, res) => {
